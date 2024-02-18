@@ -11,9 +11,11 @@ int main() {
 
     while (1) {
         printf("Menu\n\n1. Addition\n2. Subtraction\n3. Division\n4. Multiplication\n5. Exit\n\n");
+
         char input[10];
         fgets(input, 10, stdin);
         int choice = atoi(input);
+
         if(choice < 1 || choice > 5) {
             printf("Invalid input. Please enter a number between 1 and 5.\n");
             continue;
@@ -32,7 +34,7 @@ int main() {
 
         if (choice == 3) num1 = num1 * num2;
 
-        printf("What is ");
+        printf("\nWhat is ");
         if (choice == 1) printf("%d + %d?\n", num1, num2);
         else if (choice == 2) printf("%d - %d?\n", num1, num2);
         else if (choice == 3) printf("%d / %d?\n", num1, num2);
@@ -48,14 +50,14 @@ int main() {
         else if (choice == 4) correctAnswer = num1 * num2;
 
         if (answer == correctAnswer) {
-            printf("Correct!\n");
+            printf("\nCorrect!\n");
             correctAnswers++;
         } else {
             printf("Incorrect. The correct answer is %d.\n", correctAnswer);
         }
 
         totalQuestions++;
-        printf("Your score: %.2f%%\n", (100.0 * correctAnswers / totalQuestions));
+        printf("Your score: %.2f%%\n\n", (100.0 * correctAnswers / totalQuestions));
     }
 
     return 0;
